@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Новости компании");
 		"COMPONENT_TEMPLATE" => "news",
 		"IBLOCK_TYPE" => "news",
 		"IBLOCK_ID" => "2",
-		"NEWS_COUNT" => "4",
+		"NEWS_COUNT" => "8",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
