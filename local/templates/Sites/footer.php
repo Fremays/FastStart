@@ -63,6 +63,10 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/cookesHelp.js');
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap-switch.min.js');
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.carouFredSel-packed.js');
 
+//Детальные товары
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/blueimp-gallery.min.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.carouFredSel-packed.js');
+
 //<!--/ОБЯЗАТЕЛЬНО ПОДКЛЮЧИТЕ ЭТИ СКРИПТЫ И СТИЛИ-->
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/main.js');
 ?>
