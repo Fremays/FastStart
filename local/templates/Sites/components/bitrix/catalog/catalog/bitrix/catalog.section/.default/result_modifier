@@ -1,0 +1,12 @@
+<?php
+foreach ($arResutlt['ITEMS'] as $arElemet)
+{
+    if($arElemet['PREVIEW_PICTURE']['ID'])
+    {
+        $file = CFile::ResizeImageGet($arElemet['PREVIEW_PICTURE']['ID'],array('width' => 288,'height' => 288), BX_RESIZE_IMAGE_EXACT, true);
+        $arResutlt['ITEMS'][$cell]['PREVIEW_PICTURE']['WIDTH'] = $file['width'];
+        $arResutlt['ITEMS'][$cell]['PREVIEW_PICTURE']['HEIGHT'] = $file['height'];
+        $arResutlt['ITEMS'][$cell]['PREVIEW_PICTURE']['SRC'] = $file['src'];
+    }
+
+}
