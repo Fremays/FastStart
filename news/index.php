@@ -20,7 +20,7 @@ $APPLICATION->SetTitle("Новости компании");
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "Y",
-		"SEF_MODE" => "N",
+		"SEF_MODE" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
@@ -89,9 +89,11 @@ $APPLICATION->SetTitle("Новости компании");
 		"SET_STATUS_404" => "Y",
 		"SHOW_404" => "Y",
 		"FILE_404" => "",
-		"VARIABLE_ALIASES" => array(
-			"SECTION_ID" => "SECTION_ID",
-			"ELEMENT_ID" => "ELEMENT_ID",
+		"SEF_FOLDER" => "/news/",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+			"section" => "",
+			"detail" => "#ELEMENT_ID#/",
 		)
 	),
 	false
