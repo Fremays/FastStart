@@ -195,97 +195,71 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                 "IBLOCK_TYPE" => "pages_viewed"
             )
         );?>
-
-        <div class="container mbl">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="live-main">
-                        <h5><a href="#">Новости</a></h5>
-                        <div class="live-pagination">
-                            <a class="prev" href="#prev"><i class="fa fa-angle-left"></i></a>
-                            <a class="next" href="#next"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                        <div class="live-list-wrap">
-                            <div class="live-list">
-                                <div class="live-list-item" id="live-1">
-                                    <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?=SITE_TEMPLATE_PATH?>/img/live-list/img-1.jpg" alt=""/></a>
-                                        <div class="live-item-body-over">
-                                            <div class="live-item-description">
-                                                <div class="description">Изобретение относится к области получения и применения...</div>
-                                            </div>
-                                            <div class="live-item-label">
-                                                <i class="fa fa fa-twitter"></i>
-                                                <a href="#">Новое веяние в одежде - получено прочное водостойкое соединение</a>
-                                            </div>
-                                            <span class="live-item-data">25 Декабря 2015</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="live-list-item" id="live-2">
-                                    <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?=SITE_TEMPLATE_PATH?>/img/live-list/img-2.jpg" alt=""/></a>
-                                        <div class="live-item-body-over">
-                                            <div class="live-item-description">
-                                                <div class="description">В следующем году состоится выставка одежды...</div>
-                                            </div>
-                                            <div class="live-item-label">
-                                                <i class="fa fa fa-vk"></i>
-                                                <a href="#">Международная выставка одежды Salon De Fashion</a>
-                                            </div>
-                                            <span class="live-item-data">22 Октября 2015</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="live-list-item" id="live-3">
-                                    <div class="live-item-body">
-                                        <div class="live-item-body-over">
-                                            <div class="live-item-description">
-                                                <div class="description">Для пошива нашей одежды мы стали использовать новую
-                                                    инновационную ткань</div>
-                                            </div>
-                                            <div class="live-item-label">
-                                                <a href="#">Мы стали использовать новую ткань</a>
-                                            </div>
-                                            <span class="live-item-data">2 Июня 2015</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="live-list-item" id="live-4">
-                                    <div class="live-item-body">
-                                        <div class="live-item-body-over">
-                                            <div class="live-item-description">
-                                                <div class="description">Мы расширяем свой размерный ряд. Теперь наша одежда будет
-                                                    доступна большему количеству людей</div>
-                                            </div>
-                                            <div class="live-item-label">
-                                                <a href="#">Размерный ряд</a>
-                                            </div>
-                                            <span class="live-item-data">30 Апреля 2015</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="live-list-item" id="live-5">
-                                    <div class="live-item-body image">
-                                        <a class="live-item-img" href=""><img src="<?=SITE_TEMPLATE_PATH?>/img/live-list/img-3.jpg" alt=""/></a>
-                                        <div class="live-item-body-over">
-                                            <div class="live-item-description">
-                                                <div class="description">С 20 по 23 февраля состоится...</div>
-                                            </div>
-                                            <div class="live-item-label">
-                                                <i class="fa fa fa-twitter"></i>
-                                                <a href="#">Форум производителей одежды в России</a>
-                                            </div>
-                                            <span class="live-item-data">22 Апреля 2014</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"news1", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "/news/#ID#/",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "news",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "4",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "news1"
+	),
+	false
+);?>
     <?endif;?>
 
     <?if(ERROR_404=='Y'):?>
