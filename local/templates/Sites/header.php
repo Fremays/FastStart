@@ -21,6 +21,14 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
     <!--[if gte IE 9]><!-->
     <script src="<?=CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH.'/js/vendor/modernizr.min.js')?>"></script>
     <!--<![endif]-->
+    <?
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.min.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap/collapse.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap/tooltip.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/plugins.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.touchSwipe.js');
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.ba-throttle-debounce.min.js');
+    ?>
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -61,12 +69,13 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                                     )?>
                                 </ul>
                             </div>
-                            <div class="col-lg-5 col-xs-12 hidden-print">
-                                <div class="input-group-search">
-                                    <input type="text" class="form-control" placeholder="Поиск...">
-                                    <button class="btn btn-link" type="button"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
+                            <?$APPLICATION->IncludeComponent("bitrix:search.form", "search", Array(
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "PAGE" => "#SITE_DIR#search/",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+                                "USE_SUGGEST" => "N",	// Показывать подсказку с поисковыми фразами
+                            ),
+                                false
+                            );?>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
@@ -94,21 +103,25 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
                 </div>
             </div>
     </header>
-        <?$APPLICATION->IncludeComponent("bitrix:menu", "menu", Array(
-            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-            "DELAY" => "N",	// Откладывать выполнение шаблона меню
-            "MAX_LEVEL" => "1",	// Уровень вложенности меню
-            "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-            "MENU_CACHE_TYPE" => "N",	// Тип кеширования
-            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-            "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-            "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-            "COMPONENT_TEMPLATE" => ".default"
-        ),
-            false
-        );?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"menu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "Y",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menu"
+	),
+	false
+);?>
     <?if($bIsMainPage):?>
         <?$APPLICATION->IncludeComponent("bitrix:news.list", "index", Array(
             "ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
@@ -174,20 +187,14 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
         ),
             false
         );?>
-        <div class="activities-description-wrap">
-            <div class="activities-description">
-                <div class="container">
-                    <div class="activities-inner">
-                        <h3>Последние посещенные вами страницы</h3>
-                        <ul>
-                            <li><a href="#">Мы стали использовать новую ткань</a></li>
-                            <li><a href="#">Главная страница</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "Fremy:pages.viewed",
+            "",
+            Array(
+                "IBLOCKS" => array("6"),
+                "IBLOCK_TYPE" => "pages_viewed"
+            )
+        );?>
 
         <div class="container mbl">
             <div class="row">

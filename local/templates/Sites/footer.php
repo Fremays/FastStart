@@ -47,26 +47,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     </div>
 </footer>
 
-<!--ОБЯЗАТЕЛЬНО ПОДКЛЮЧИТЕ ЭТИ СКРИПТЫ И СТИЛИ-->
 <?
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.min.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap/collapse.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap/tooltip.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/plugins.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.touchSwipe.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.ba-throttle-debounce.min.js');
-
-
-
-//<!--/ОБЯЗАТЕЛЬНО ПОДКЛЮЧИТЕ ЭТИ СКРИПТЫ И СТИЛИ-->
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/cookesHelp.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/bootstrap-switch.min.js');
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.carouFredSel-packed.js');
-
-//Детальные товары
-    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/blueimp-gallery.min.js');
-    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/vendor/jquery.carouFredSel-packed.js');
-
 //<!--/ОБЯЗАТЕЛЬНО ПОДКЛЮЧИТЕ ЭТИ СКРИПТЫ И СТИЛИ-->
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH.'/js/main.js');
 ?>
