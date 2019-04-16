@@ -1316,4 +1316,17 @@ $arTemplateParameters['DETAIL_SHOW_VIEWED'] = array(
 
 // hack to hide component parameters by templates
 $arTemplateParameters['HIDE_USE_ALSO_BUY'] = array();
+
+$arTemplateParameters['CATALOG_WIDTH'] = array(
+    'PARENT' => 'VISUAL',
+    'NAME' => GetMessage('CATALOG_WIDTH'),
+    'TYPE' => 'STRING',
+    'DEFAULT' => '288'
+);
+$arTemplateParameters['CATALOG_HEIGHT'] = array(
+    'PARENT' => 'VISUAL',
+    'NAME' => GetMessage('CATALOG_HEIGHT'),
+    'TYPE' => 'STRING',
+    'DEFAULT' => '288'
+);
 ?>

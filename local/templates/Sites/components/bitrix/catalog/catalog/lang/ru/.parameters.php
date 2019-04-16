@@ -211,4 +211,6 @@ Ecommerce и/или Яндекс.Метрике";
 $MESS["CP_BC_TPL_DATA_LAYER_NAME"] = "Имя контейнера данных";
 $MESS["CP_BC_TPL_BRAND_PROPERTY"] = "Свойство брендов";
 $MESS["CP_BC_TPL_USE_RATIO_IN_RANGES"] = "Учитывать коэффициенты для диапазонов цен";
+$MESS["CATALOG_WIDTH"] = "Ширина изображения";
+$MESS["CATALOG_HEIGHT"] = "Высота изображения";
 ?>
